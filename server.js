@@ -66,12 +66,10 @@ app.post('/register', (req, res) => {
         ...{id: 125,
         name: 'John',
         email: 'john@gmail.com',
-        password: 'cookies',
         entries: 0,
         joined: new Date()},
         email,
         name,
-        password
     }
         
     )
