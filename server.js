@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 })
  
 app.post('/signin', (req, res) => {
-    
+    console.log(req.body, typeof req.body)
     // bcrypt.compare("sheyiladzee", "$2a$10$36fAZYgkNY4lX.bH0hQeaeomIo010kDfcFxHRFq.XNoUmDglCn8Wu", function(err, res) {
     //     console.log('the answer of hash comparing is ', res)
     // })
@@ -50,7 +50,7 @@ app.post('/signin', (req, res) => {
     
     if (req.body.email === database.users[0].email &&
         req.body.password === database.users[0].password) {
-            res.json('Success')
+            res.json(database.users[0])
         } else {
             res.status(400).json('error login in')
         }
